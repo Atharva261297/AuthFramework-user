@@ -23,7 +23,7 @@ public class AuthController {
     Logger log = LoggerFactory.getLogger(AuthController.class);
 
     @PostMapping("/register")
-    public ErrorCodes registerFull(@RequestHeader String project_auth, @RequestHeader String user_auth, @RequestBody String userData) {
+    public ErrorCodes register(@RequestHeader String project_auth, @RequestHeader String user_auth, @RequestBody String userData) {
         log.debug("Register : " + userData);
         return authService.register(project_auth, user_auth, userData);
     }
